@@ -79,7 +79,7 @@ img {
 
 <c:if test="${empty sessionScope.customer}">
 <section id="ABC">
-  <h3><a href="login.jsp">Home</a></h3>
+  <h3><a href="header.jsp">Home</a></h3>
   <h3><a href="login.jsp">Edit Profile</a></h3>
   <h3><a href="login.jsp">Transfer Money</a></h3>
   <h3><a href="login.jsp">Balance Enquiry</a></h3>

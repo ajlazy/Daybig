@@ -36,14 +36,14 @@ public class LoginController extends HttpServlet {
 		RequestDispatcher dispatcher = null;
 		Customer customer = new Customer(0, "", password, email, "", null, null);
 		customer = customerService.authenticate(customer);
-		if (customer.getCustomerId() != 0) {
+		if (customer != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("customer",customer);
 			session.setMaxInactiveInterval(180);
 			dispatcher = request.getRequestDispatcher("header.jsp");
 			dispatcher.forward(request, response);
 		} else {
-			dispatcher = request.getRequestDispatcher("error.jsp");
+			dispatcher = request.getRequestDispatcher("loginError.jsp");
 			dispatcher.forward(request, response);
 		}
 	}

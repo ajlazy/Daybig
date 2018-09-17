@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 <%@ include file="header.jsp" %>
 </head>
-<body style="text-align:center" >
+<body>
 <br><br><br><br><br>
-<h4>The transaction is successfully completed!!</h4>
+<h4  style="text-align:center" >The transaction is successfully completed!!</h4>
 </body>
 </html>

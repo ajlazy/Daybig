@@ -15,19 +15,19 @@
 		<input type="number" value="${customer.customerId}" name="customerId" readonly/>
 		<br> <br>
 		<label> Customer Name: </label>
-		<input type="text" placeholder="${customer.customerName}" name="customerName" required/>
+		<input type="text" value="${customer.customerName}" name="customerName" required/>
 		<br> <br>
 		<label> Customer Password: </label>
 		<input type="password" value="${customer.customerPassword}" name="customerPassword" readonly/>
 		<br> <br>
 		  <label> Customer Email: </label>
-		<input type="email" placeholder="${customer.customerEmail}" name="customerEmail" required/>
+		<input type="email"value="${customer.customerEmail}" name="customerEmail" required/>
 		<br> <br>
 	    <label> Customer Address: </label>
-		<input type="text" placeholder="${customer.customerAddress}" name="customerAddress" required/>
+		<input type="text" value="${customer.customerAddress}" name="customerAddress" required/>
 		<br> <br>
 	    <label> Customer DOB: </label>
-		<input type="date"placeholder="${customer.customerDateOfBirth}" name="customerDob"  required/>
+		<input type="date"value="${customer.customerDateOfBirth}" name="customerDob"  required/>
 	    <br> <br><br>
 	<input type="submit" value="Edit"/>
 	</form>

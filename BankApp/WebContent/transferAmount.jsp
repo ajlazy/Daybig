@@ -19,7 +19,7 @@
 		<input type="text" name="toAccId" required/>
 		<br> <br>
 	<label> Amount: </label>
-		<input type="number"  name="amount" min=1000 max=10000 required/>
+		<input type="number"  name="amount" min=1000 max=25000 required/>
 		<br> <br>
 		<input type="reset" value="Clear"/>
 	<input type="submit" value="Submit"/>

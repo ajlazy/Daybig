@@ -9,6 +9,6 @@
 </head>
 <body>
 <br><br><br><br><br>
-<h4  style="text-align:center" >You have updated your Password successfully!!</h4>
+<h4  style="text-align:center" >You have entered incorrect password</h4>
 </body>
 </html>

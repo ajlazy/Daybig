@@ -4,7 +4,6 @@ import java.util.Set;
 
 import com.capgemini.bankapp.dao.CustomerDao;
 import com.capgemini.bankapp.database.DummyDataBase;
-import com.capgemini.bankapp.exceptions.InsufficientBalanceException;
 import com.capgemini.bankapp.model.Customer;
 
 public class CustomerDaoImpl implements CustomerDao {
@@ -15,7 +14,6 @@ public class CustomerDaoImpl implements CustomerDao {
 	public Customer authenticate(Customer customer) {
 		for (Customer c : customers) {
 			if (c.getCustomerEmail().equals(customer.getCustomerEmail())) {
-				System.out.println(c);
 				if (c.getCustomerPassword().equals(customer.getCustomerPassword())) {
 					return c;
 				}
@@ -34,6 +32,7 @@ public class CustomerDaoImpl implements CustomerDao {
 					c.setCustomerEmail(customer.getCustomerEmail());
 					c.setCustomerAddress(customer.getCustomerAddress());
 					c.setCustomerDateOfBirth(customer.getCustomerDateOfBirth());
+					DummyDataBase.setCustomers(customers);
 					return c;
 				}
 			}
@@ -43,15 +42,17 @@ public class CustomerDaoImpl implements CustomerDao {
 
 	@Override
 	public boolean updatePassword(Customer customer, String oldPassword, String newPassword){
-		
-		
-				if (customer.getCustomerPassword() == oldPassword) {
+		for (Customer c : customers) {	
+		if(c.getCustomerId()==customer.getCustomerId())
+		{
+			if (c.getCustomerPassword().equals(oldPassword)) {
 					customer.setCustomerPassword(newPassword);
+					DummyDataBase.setCustomers(customers);
 					return true;
 				}
+		}
+		}
 			
-	
-		
 		return false;
 }
 }

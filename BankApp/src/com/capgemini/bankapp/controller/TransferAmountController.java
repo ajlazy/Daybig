@@ -35,18 +35,20 @@ public class TransferAmountController extends HttpServlet {
 		RequestDispatcher dispatcher = null;
 		BankAccount account = new BankAccount(fromAccId,"",0);
 		try {
-		
 			if(bankAccountService.fundTransfer(fromAccId, toAccId, amount))
 			{
-				
 				dispatcher = request.getRequestDispatcher("successfullTransfer.jsp");
 				dispatcher.forward(request, response);
-			} else {
-				dispatcher = request.getRequestDispatcher("error.jsp");
-				dispatcher.forward(request, response);
 			}
-		} catch (InsufficientBalanceException e) {
+			else {
+				throw new InsufficientBalanceException("Insufficient balance in the account for transaction");
+			}
+		} 
+		catch (InsufficientBalanceException e) {
 			e.printStackTrace();
+		    dispatcher = request.getRequestDispatcher("insufficientBalance.jsp");
+			dispatcher.forward(request, response);
+			
 		}
 	}
 }

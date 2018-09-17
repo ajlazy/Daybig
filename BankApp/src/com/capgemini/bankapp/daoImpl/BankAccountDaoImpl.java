@@ -27,6 +27,7 @@ public class BankAccountDaoImpl implements BankAccountDao{
 			if(bankAccount.getAccountId()==accountId)
 			{
 				bankAccount.setAccountBalance(newBalance);
+				DummyDataBase.setBankAccounts(bankAccounts);
 				return true;
 			}
 		}

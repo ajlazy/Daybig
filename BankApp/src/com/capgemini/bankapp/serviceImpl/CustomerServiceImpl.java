@@ -2,7 +2,6 @@ package com.capgemini.bankapp.serviceImpl;
 
 import com.capgemini.bankapp.dao.CustomerDao;
 import com.capgemini.bankapp.daoImpl.CustomerDaoImpl;
-import com.capgemini.bankapp.exceptions.InsufficientBalanceException;
 import com.capgemini.bankapp.model.Customer;
 import com.capgemini.bankapp.service.CustomerService;
 
@@ -21,7 +20,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public boolean updatePassword(Customer customer, String oldPassword, String newPassword) throws InsufficientBalanceException {
+	public boolean updatePassword(Customer customer, String oldPassword, String newPassword){
+		System.out.println(customer);
 		return customerDao.updatePassword(customer, oldPassword, newPassword);
 		
 	}
